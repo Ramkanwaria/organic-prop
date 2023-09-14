@@ -1,0 +1,30 @@
+ <TouchableOpacity activeOpacity={0.5}
+                        style={styles.buttonStyle}
+                        onPress={() => captureImage('photo')}>
+                        <View style={{ alignItems: 'center', justifyContent: 'center' }} activeOpacity={0.8}>
+                            <Image source={imagePath.palesh} style={styles.oneImage} />
+                            <Image source={imagePath.border_Image} style={styles.border_Image} />
+                            <Image source={imagePath.uploadImage} style={{ height: 149, width: 160, }} />
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        activeOpacity={0.5}
+                        style={styles.buttonStyle}
+                        onPress={() =>
+                            //requestCameraPermission()
+                            chooseFile('photo')
+                        }>
+                        <Image
+                            source={{ uri: filePath?.assets && filePath?.assets[0] && filePath?.assets[0].uri ? filePath?.assets[0].uri : "" }}
+                            style={styles.imageStyle}
+                        />
+                        <View style={{}}>
+                            {photo && (
+                                <Image
+                                    source={{ uri: photo?.assets && photo?.assets[0] && photo?.assets[0].uri ? photo?.assets[0].uri : "" }}
+                                    style={{ width: 100, height: 100 }}
+                                />
+                            )}
+                        </View>
+                    </TouchableOpacity>
