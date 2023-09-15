@@ -221,12 +221,7 @@ const Edit_Profile = (props) => {
         }
 
         const initials = getInitials(profile.userName);
-        console.log(initials, "=======>DATA1");
-        const handleInputChange = (text) => {
-            alert('hii')
-        }
         return (
-            console.log(userProfile, "=======>DATA1dfjkgkj"),
             <View style={styles.mainView}>
                 <Modal
                     animationType="slide"
