@@ -223,7 +223,7 @@ const Edit_Profile = (props) => {
         const initials = getInitials(profile.userName);
         console.log(initials, "=======>DATA1");
         const handleInputChange = (text) => {
-
+            alert('hii')
         }
         return (
             console.log(userProfile, "=======>DATA1dfjkgkj"),
@@ -244,8 +244,6 @@ const Edit_Profile = (props) => {
                                     renderItem={({ item, index }) => {
                                         return (
                                             <TouchableOpacity key={index} onPress={() => {
-
-
                                                 if (item.id == 1) {
                                                     captureImage('photo')
                                                 }
@@ -270,46 +268,29 @@ const Edit_Profile = (props) => {
                                         );
                                     }}
                                     showsHorizontalScrollIndicator={false}
-                                    keyExtractor={item => item.id}
-                                />
+                                    keyExtractor={item => item.id} />
                             </View>
                         </View>
                     </View>
                 </Modal>
-                {/*    <Image source={imagePath.demoPicture} style={{ height: 188, width: 118, borderRadius: 60 }} />*/}
                 <View style={{}}>
                     <View>
-                        <ImageBackground style={styles.userEditStyle}
-
-                        >
+                        <ImageBackground style={styles.userEditStyle}>
                             <View style={styles.userEditStyle} >
                                 <Text style={{ fontSize: 40, textAlign: 'center', marginTop: 35 }}>{initials}</Text>
                                 <Image source={{ uri: userProfile }} style={{ height: 118, width: 118, borderRadius: 100, bottom: 82 }} />
-
-
-
                             </View>
-
-
                         </ImageBackground>
-
-
                     </View>
                     {filePath && filePath.assets && filePath.assets[0] && (
-
                         <Image
                             source={{
                                 uri: filePath.assets[0].uri
-
                             }}
-                            style={styles.editImageStyle}
-                        />
+                            style={styles.editImageStyle} />
                     )}
-
-
                 </View>
                 <TouchableOpacity style={styles.editPrifile} activeOpacity={0.8} onPress={() => {
-
                     setShowModal(!showModal)
                 }}>
                     <View>
@@ -319,13 +300,10 @@ const Edit_Profile = (props) => {
             </View>
         )
     }
-
     const fullNameComponent = () => {
-        //alert(name)
         return (
             <View>
                 <View style={{ marginHorizontal: 20, marginTop: 10 }}>
-
                     <Text style={{ fontSize: 15, color: "#1A1E25", marginTop: 10 }}>Full name</Text>
                 </View>
                 <View style={{
@@ -340,16 +318,10 @@ const Edit_Profile = (props) => {
                     margin: 10,
                     marginHorizontal: 20,
                 }}>
-                    {/* <Image
-                            source={imagePath.myProfile}
-                            style={styles.imageStyle}
-                        /> */}
                     <Image
                         source={imagePath.myProfile}
-                        style={[styles.imageStyle, { tintColor: focus ? '#1D8348' : '#7D7F88' },]}
-                    />
+                        style={[styles.imageStyle, { tintColor: focus ? '#1D8348' : '#7D7F88' },]} />
                     <TextInput
-
                         style={{ flex: 1 }}
                         placeholder="Full Name"
                         underlineColorAndroid="transparent"
@@ -358,14 +330,11 @@ const Edit_Profile = (props) => {
                         keyboardType="default"
                         onFocus={() => setFocus(true)}
                         onBlur={() => setFocus(false)}
-
                         value={name}
                         onChangeText={text => {
-
                             setName(text)
                             setNameErroe(false)
-                        }}
-                    />
+                        }} />
                 </View>
                 <View style={{ marginHorizontal: 20 }}>
                     {nameerroe ? <Text style={{ fontSize: 15, color: 'red' }}>{nameerroe}</Text> : null}
@@ -373,13 +342,11 @@ const Edit_Profile = (props) => {
             </View>
         )
     }
-
     emailComponent = () => {
         return (
             <View>
                 <View style={{ marginHorizontal: 20, marginTop: 10 }}>
                     <Text style={styles.emailaddressStyle}>Email address</Text>
-
                 </View>
                 <View style={{
                     flexDirection: 'row',
